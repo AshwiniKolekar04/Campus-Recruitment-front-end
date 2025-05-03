@@ -1,0 +1,27 @@
+<div>
+  <style>
+    body
+    {
+      background-color: rgb(176, 231, 238);
+    }
+  </style>
+</div>
+<div class="container mt-3">
+    <h5 class="text-center display-5"> Upload Upcoming Company </h5>            
+    <form (ngSubmit)="submitdata()">
+      <div class="mb-3 mt-3">
+        <label for="companyname">company name</label>
+        <input type="text" class="form-control" id="companyname" placeholder="company name" name="companyname" [(ngModel)]="view.companyname">
+      </div>
+      <div class="mb-3">
+        <label for="registrationlink">Registration Link</label>
+        <input type="link" class="form-control" id="registrationlink" placeholder="Registration Link" name="registrationlink" [(ngModel)]="view.registrationlink">
+      </div>
+      <div class="mb-3">
+        <label for="duedate">Due Date</label>
+        <input type="date" class="form-control" id="duedate" placeholder="duedate" name="duedate"  [(ngModel)]="view.duedate">
+      </div>
+      
+      <button type="submit" class="btn btn-primary"  >Submit</button>
+    </form>
+</div>

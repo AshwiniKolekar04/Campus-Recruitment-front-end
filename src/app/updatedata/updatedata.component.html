@@ -1,0 +1,28 @@
+<div>
+  <style>
+    body
+    {
+      background-color: rgb(176, 231, 238);
+    }
+  </style>
+</div>
+<div class="container mt-3">
+    <h5 class="text-center display-5"> Student View Data </h5>            
+    <form (ngSubmit)="submitdata()">
+      <div class="mb-3 mt-3">
+        <label for="companyname">company name</label>
+        <input type="text" class="form-control" id="companyname" placeholder="company name" name="companyname" [(ngModel)]="view.companyname">
+      </div>
+      <div class="mb-3">
+        <label for="studentname"> Student Name</label>
+        <input type="link" class="form-control" id="studentname" placeholder="Student Name" name="studentname" [(ngModel)]="view.studentname">
+      </div>
+      <div class="mb-3">
+        <label for="roundCompleted">Round Completed</label>
+        <input type="text" class="form-control" id="roundCompleted" placeholder="Round Completed" name="roundCompleted"  [(ngModel)]="view.roundCompleted">
+      </div>
+      
+      
+      <button type="submit" class="btn btn-primary"  >Submit</button>
+    </form>
+</div>

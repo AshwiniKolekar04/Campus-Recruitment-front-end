@@ -1,0 +1,283 @@
+
+<div>
+  <style>
+body
+  { 
+    background-color: rgb(189, 214, 214);
+    justify-content: center;
+  }
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  width: 70%;
+  
+}
+
+.col-25 {
+  float: left;
+  width: 35%;
+  margin-top: 6px;
+}
+
+
+
+ .tbody {
+   background: rgba(255, 255, 255, 0.9);
+   padding: 30px;
+   border-radius: 10px;
+   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }   
+    
+  
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+ 
+}
+</style>
+</div>
+<div style="background: #c1dcea;">
+  <h1 style="text-align: center;color: brown;">Student Registration form</h1>
+  <h2 style="text-align: center;color: rgb(22, 165, 221);">Placement</h2>
+  <form  #formRef="ngForm" (ngSubmit)="submitdata(formRef)" >
+    <!-- Name (required, only letters and space allowed) -->
+    <div class="row">
+      <div class="col-25">
+        <label for="fname">Name (Surname First)</label>
+      </div>
+      <div class="col">
+        <input type="text" id="name" name="name" placeholder="Your name.." [(ngModel)]="r.name" required pattern="[a-zA-Z ]+" #nameRef="ngModel">
+      </div>
+    </div>
+    <div *ngIf="nameRef.invalid && nameRef.touched" class="error">
+      Name is required and must contain only letters and spaces.
+    </div>
+  
+    <!-- Programme (required) -->
+    <div class="row">
+      <div class="col-25">
+        <label for="programme">Programme</label>
+      </div>
+      <div class="col">
+        <input type="text" id="programme" name="programme" placeholder="Programme" [(ngModel)]="r.programme" required #programmeRef="ngModel">
+      </div>
+    </div>
+    <div *ngIf="programmeRef.invalid && programmeRef.touched" class="error">
+      Programme is required.
+    </div>
+  
+    <!-- Enter Class (required) -->
+    <div class="row">
+      <div class="col-25">
+        <input type="text" id="enterclass" class="form-control" placeholder="Enter class" name="class" [(ngModel)]="r.enterclass" required #classRef="ngModel">
+      </div>
+      <div *ngIf="classRef.invalid && classRef.touched" class="error">
+        Class is required.
+      </div>
+  
+      <!-- Rollno (required, numeric) -->
+      <div class="col">
+        <input type="text" id="rollno" class="form-control" placeholder="Enter Rollno" name="Rollno" [(ngModel)]="r.enterrollno" required pattern="^[0-9]+$" #rollnoRef="ngModel">
+      </div>
+    </div>
+    <div *ngIf="rollnoRef.invalid && rollnoRef.touched" class="error">
+      Rollno is required and must be numeric.
+    </div>
+  
+    <!-- PRN (required, numeric) -->
+    <div class="row">
+      <div class="col-25">
+        <input type="text" id="prnno" class="form-control" placeholder="Enter PRN" name="PRNno" [(ngModel)]="r.enterprnno" required pattern="^[0-9]+$" #prnRef="ngModel">
+      </div>
+      <div *ngIf="prnRef.invalid && prnRef.touched" class="error">
+        PRN is required and must be numeric.
+      </div>
+  
+      <!-- ABC ID (required) -->
+      <div class="col">
+        <input type="text" id="abcid" class="form-control" placeholder="Enter ABC ID" name="ABC ID" [(ngModel)]="r.enterabcid" required #abcidRef="ngModel">
+      </div>
+    </div>
+    <div *ngIf="abcidRef.invalid && abcidRef.touched" class="error">
+      ABC ID is required.
+    </div>
+  
+    <!-- Date of Birth (required, valid date format) -->
+    <div class="row">
+      <div class="col-25">
+        <input type="date" id="dateofbirth" class="form-control" placeholder="Enter Date Of Birth" name="Birthdate" [(ngModel)]="r.dateofbirth" required #dobRef="ngModel">
+      </div>
+      <div *ngIf="dobRef.invalid && dobRef.touched" class="error">
+        Date of Birth is required.
+      </div>
+  
+      <!-- Email (required, valid email format) -->
+      <div class="col">
+        <input type="email" id="email" class="form-control" placeholder="Enter Email" name="Email" [(ngModel)]="r.email" required email #emailRef="ngModel">
+      </div>
+    </div>
+    <div *ngIf="emailRef.invalid && emailRef.touched" class="error">
+      Please enter a valid email.
+    </div>
+  
+    <!-- Mobile No (required, 10 digits) -->
+    <div class="row">
+      <div class="col-25">
+        <input type="text" id="mobileno" class="form-control" placeholder="Enter Mobile No" name="Mobileno" [(ngModel)]="r.mobileno" required pattern="^[0-9]{10}$" #mobileRef="ngModel">
+      </div>
+      <div *ngIf="mobileRef.invalid && mobileRef.touched" class="error">
+        Mobile number must be 10 digits.
+      </div>
+  
+      <!-- Whatsapp No (required, 10 digits) -->
+      <div class="col-25">
+        <input type="text" id="whatsappno" class="form-control" placeholder="Enter Whatsapp No" name="whatsappno" [(ngModel)]="r.whatsappno" required pattern="^[0-9]{10}$" #whatsappRef="ngModel">
+      </div>
+    </div>
+    <div *ngIf="whatsappRef.invalid && whatsappRef.touched" class="error">
+      Whatsapp number must be 10 digits.
+    </div>
+  
+    <!-- Permanent Address (required) -->
+    <div class="row">
+      <div class="col-20">
+        <label for="permentadress">Permanent Address</label>
+      </div>
+      <div class="col">
+        <input type="text" id="permentadress" name="Address" placeholder="Permanent Address" [(ngModel)]="r.permentadress" required #addressRef="ngModel">
+      </div>
+    </div>
+    <div *ngIf="addressRef.invalid && addressRef.touched" class="error">
+      Permanent address is required.
+    </div>
+  
+    <!-- Country (required) -->
+    <div class="row">
+      <div class="col-25">
+        <label for="inputcountry">Country</label>
+        <select class="form-select form-select-sm" name="country" [(ngModel)]="r.country" required #countryRef="ngModel">
+          <option selected>Country</option>
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+          <option value="india">India</option>
+        </select>
+      </div>
+      <div *ngIf="countryRef.invalid && countryRef.touched" class="error">
+        Please select a country.
+      </div>
+  
+      <!-- State (required) -->
+      <div class="col-25">
+        <label for="inputstate">State</label>
+        <select class="form-select form-select-sm" name="state" [(ngModel)]="r.state" required #stateRef="ngModel">
+          <option selected>State</option>
+          <option value="gujarat">Gujarat</option>
+          <option value="punjab">Punjab</option>
+          <option value="maharashtra">Maharashtra</option>
+          <option value="tamilnadu">Tamil Nadu</option>
+        </select>
+      </div>
+    </div>
+    <div *ngIf="stateRef.invalid && stateRef.touched" class="error">
+      Please select a state.
+    </div>
+      <br>
+             
+            <div class="row">
+              <div class="col-20">
+                <label for="lname">Medium of Education()</label>
+              </div>
+              <div class="col">
+                <input type="text" id="lname" name="lastname" placeholder="Medium of Education"
+                name="Medium"[(ngModel)]="r.medium">
+              </div>
+            </div>
+          <br> 
+     <div class="container ">
+       <h2>Education</h2>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Passing year</th>
+              <th>Percentage</th>
+              <th>School/College Name</th>
+              <th>Examination Board</th>
+             </tr>
+          </thead>
+            <tbody>
+                <tr>
+                    <td><label for="name">10th</label></td>
+                    <td><input type="number" id="passyear" class="form-control" placeholder="tenthpassingyear "[(ngModel)]="r.tenthpassingyear"></td>
+                    <td><input type="number" id="Percentage" class="form-control" placeholder="tenthpercentage"[(ngModel)]="r.tenthpercentage"></td>
+                    <td><input type="text" id="name" class="form-control" placeholder=" "></td>
+                    <td><input type="text" id="Board" class="form-control" placeholder="tenthboardexamination"[(ngModel)]="r.tenthboardexamination"></td>
+                </tr>
+                <tr>
+                    <td><label for="email">12th</label></td>
+                    <td><input type="number"  id="passyear"   class="form-control" placeholder="twelththpassingyear"[(ngModel)]="r.twelththpassingyear"></td>
+                    <td><input type="number" id="Percentage"  class="form-control" placeholder="twelththpercentage"[(ngModel)]="r.twelththpercentage"></td>
+                    <td><input type="text"  id="passyear" class="form-control" placeholder=" "></td>
+                    <td><input type="text" id="Board"  class="form-control" placeholder="twelththboardexamination"[(ngModel)]="r.twelththboardexamination"></td>
+                </tr>
+               
+            </tbody>
+        </table>      
+     </div>
+     <h2>BCA</h2>
+  
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>semester</th>
+            <th>I</th>
+            <th>II</th>
+            <th>III</th>
+            <th>IV</th>
+
+           </tr>
+        </thead>
+          <tbody>
+              <tr>
+                  <td><label for="name">Percentage</label></td>
+                  <td><input type="number" id="I"  class="form-control" placeholder="I"[(ngModel)]="r.I"></td>
+                  <td><input type="number"  id="II" class="form-control" placeholder="II"[(ngModel)]="r.II"></td>
+                  <td><input type="number" id="III"  class="form-control" placeholder="III"[(ngModel)]="r.III"></td>
+                  <td><input type="number" id="IV"  class="form-control" placeholder="IV"[(ngModel)]="r.IV"></td>
+                  </tr>
+        </tbody>
+      </table> 
+      <button type="submit" class="btn btn-primary" [disabled]="!formRef.valid">Submit</button>
+   </form>
+ </div> 

@@ -1,0 +1,113 @@
+<div style="background: #c1dcea;">
+<div class="container" style="margin-top: 10px;  "> 
+<div class="row">
+  <div class="col-md-2 text-center">
+      <img class="img-responsive" src="/MKarve.jpg" style="width: 195px;  padding:5px;  padding-top:13px;">
+  </div>
+
+  <div class="col-md-8 text-center">
+    <h5 style="background-color: rgb(253, 211, 155);">
+      <div class="col-md-12">
+          <div style=" padding-top: 25px;">
+          <span style="font-size: 15px"> Maharshi Karve Stree Shikshan Samstha's </span>
+          <br>
+          <span style="font-size: 35px; font-weight: bold; ">Maharshi Karve Mahila Mahavidyalay, Satara </span>
+          <br>
+<span style="font-size: 13px; font-weight: bold;"> (Formerly known as College of Computer Application for Women, Satara) </span>
+<br>
+           <span style="font-size: 13px; font-weight: bold; color:#8A2BE2;"> DTE Code : 16238 || Choice Code : 1623810150F </span>
+          <br>        <span style="font-size: 15px;"> Approved by Govt. of Maharashtra /UGC /AICTE </span> <br>
+          <span style="font-size: 14px">Affiliated to S.N.D.T. Women's University, Mumbai </span>
+<br>
+<span style="font-size: 18px; font-weight: bold;"> NAAC Accredited with 'B+' Grade </span>
+      </div>
+        </div>
+    </h5>
+  </div>
+  <div class="col-md-2">
+    <img class="img-responsive" src="/logo1.jpg" style="width:195px; float: right; padding:5px; padding-top:13px;"> 
+  </div>
+</div>
+</div>
+</div>
+
+
+<nav class="navbar navbar-expand-sm bg-secondary p-3">
+  <div class="container-fluid"    [ngSwitch]="usertype" >
+    
+    <div class="collapse navbar-collapse" id="collapsibleNavbar" >
+      <ul class="navbar-nav"   *ngSwitchCase="'guest'">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/Home">Home</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" routerLink="/" role="button" data-bs-toggle="dropdown">login</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/coordinatorlogin">Coordinator login</a></li>
+            <li><a class="dropdown-item" routerLink="/studentlogin">Student login </a></li>                 
+          </ul>
+        </li>
+        
+        <li class="nav-item ">
+          <a class="nav-link " routerLink="/" role="button" >Co-ordinator</a>
+                                     
+        <li class="nav-item ">
+          <a class="nav-link"  routerLink="/" role="button" >Student</a>
+          
+        </li>              
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" routerLink="/" role="button" data-bs-toggle="dropdown">Placement</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" routerLink="/ourrecurter">Our esteemed Recruiters</a></li>
+            <li><a class="dropdown-item" routerLink="/viewplacedstudent">View Placed Student </a></li> 
+          
+          </ul>
+        </li>
+     
+      </ul>
+
+      <ul class="navbar-nav"   *ngSwitchCase="'coordinator'">
+        <li class="nav-item" style="font-family: 'Times New Roman', Times, serif;margin-left:10px ;">
+          <a class="nav-link " routerLink="/coordinator" >coordinator</a>
+        </li>  
+        <li class="nav-item" style="font-family: 'Times New Roman', Times, serif;">
+          <a class="nav-link" routerLink="/uploadupcompanyname">Upload Upcoming Company </a>
+        </li>
+            <li class="nav-item" style="font-family: 'Times New Roman', Times, serif;">
+              <a class="nav-link" routerLink="/eligiblestudent">Eligible student </a>
+            </li> 
+            <li class="nav-item" style="font-family: 'Times New Roman', Times, serif;">
+              <a class="nav-link" routerLink="/studentviewdata">Student View Data </a>
+            </li> 
+             
+           
+                                 
+        <li class="nav-item">
+          <a class="nav-link" (click)="clogout()">Logout</a>
+        </li>
+      </ul>
+      
+
+      <ul class="navbar-nav"     *ngSwitchCase="'student'">
+                          
+        <li class="nav-item" style="font-family: 'Times New Roman', Times, serif;margin-left:10px ;">
+          <a class="nav-link"  routerLink="/student" >student</a>
+        </li>
+          
+            <li class="nav-item" style="font-family: 'Times New Roman', Times, serif;">
+              <a class="nav-link" routerLink="/studentregistrationform">Student Registration Form </a>
+            </li>
+            <li class="nav-item" style="font-family: 'Times New Roman', Times, serif;">
+              <a class="nav-link" routerLink="/updatedata">Update Data</a>
+            </li>                  
+            <li class="nav-item" style="font-family: 'Times New Roman', Times, serif;">
+              <a class="nav-link" routerLink="/viewdata">View data </a>
+            </li>                      
+        <li class="nav-item">
+          <a class="nav-link"  routerLink="/home" (click)="slogout()">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,26 @@
+<div>
+    <style>
+        body
+        {
+          background-color: rgb(176, 231, 238);
+        }
+      </style>
+</div>
+
+<div class="d-flex justify-content-center align-items-center vh-100 bg-light">
+
+    <div class="text-center bg-white p-5 rounded shadow">
+        <h2 class="text-success" align="center">Logged Out</h2>
+    
+    </div>
+    <p class="text-center fw-bold" align="center">Are you sure you want to log out? <a href="logout.php"
+        class="btn btn-danger btn-sm">Yes</a> <a href="dashboard.html" class="btn btn-secondary btn-sm">No</a></p>
+    
+        <script>
+            function handleClick(button) {
+                button.classList.remove("btn-primary");
+                button.classList.add("btn-success"); // Change button color to green
+            }
+        </script>
+   </div>
+
