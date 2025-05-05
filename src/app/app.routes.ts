@@ -12,7 +12,7 @@ import { ViewplacedstudentComponent } from './viewplacedstudent/viewplacedstuden
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { MemberComponent } from './member/member.component';
 import { LogoutComponent } from './logout/logout.component';
-import { EligibalstudentComponent } from './eligibalstudent/eligibalstudent.component';
+import { RegisterstudentComponent } from './registerstudent/registerstudent.component';
 import { StudentregistrationformComponent } from './studentregistrationform/studentregistrationform.component';
 import { StudentplacedComponent } from './studentplaced/studentplaced.component';
 import { studentviewdataComponent } from './studentviewdata/studentviewdata.component';
@@ -33,7 +33,7 @@ export const routes: Routes = [
     {path:'aboutus',component:AboutusComponent},
     {path:'member',component:MemberComponent},
     {path:'logout',component:LogoutComponent},
-    { path: 'eligiblestudent', component: EligibalstudentComponent },
+    {path:'registerstudent',component:RegisterstudentComponent},
     {path:'studentregistrationform',component:StudentregistrationformComponent},
     {path:'studentplaced',component:StudentplacedComponent},
     {path:'updatedata',component:UpdatedataComponent},

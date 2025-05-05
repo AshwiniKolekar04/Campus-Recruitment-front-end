@@ -8,6 +8,7 @@ import { Registration } from '../models/studentregistrationform';
 })
 export class RegistrationService {
 serverurl="http://localhost:9000/registration"
+  getall: any;
   constructor(private http:HttpClient) { }
 
   getAll():Observable<Registration[]>

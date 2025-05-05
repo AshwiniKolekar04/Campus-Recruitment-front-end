@@ -1,0 +1,43 @@
+<div>
+  <style>
+      .div-container
+      {
+        background-color: rgb(176, 231, 238);
+      }
+  
+      h2
+      {
+        align-items: center;
+      }
+      .div-container {
+        background-color:   #c1dcea; 
+        
+      }
+    </style>
+  
+</div>
+
+<div class="container">
+<div class="col-sm-12">
+  <h2 class="text-center mb-4" style="font-family: Impact, 'Arial Narrow Bold';font-size: 50px;"><br>Register Student<br></h2>
+  <div class="table-responsive">
+      <table class="table table-bordered table-hover">
+          <thead >
+              <tr>
+                  <th>Sr No</th>
+                  <th>Register Student</th>
+                  
+                  
+              </tr>
+          </thead>
+          <tbody id="View Data">
+              <tr *ngFor="let a of rarr">
+                  <td>{{a.srno}}</td>
+                  <td>{{a.registerstudent}}</td>
+
+              </tr>
+          </tbody>
+      </table>
+  </div>
+</div>
+</div>

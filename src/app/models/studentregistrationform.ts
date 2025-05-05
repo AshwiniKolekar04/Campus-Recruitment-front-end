@@ -27,7 +27,8 @@ export class Registration {
     II:any
     III:any
     IV:any
-          
-    
+    srno:  string = '';
+    registerstudent: string = '';      
+    save: any;
 
 }
