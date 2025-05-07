@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Upcomingcompany } from '../models/upcomingcompany';
 import { UpcomingcompanyService } from '../services/upcomingcompany.service';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-viewdata',
-  imports: [CommonModule],
+  imports: [CommonModule,RouterLink],
   templateUrl: './viewdata.component.html',
   styleUrl: './viewdata.component.css'
 })

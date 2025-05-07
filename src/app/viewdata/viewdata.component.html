@@ -1,6 +1,6 @@
-<div>
+
     <style>
-        .div-container
+       .div-container
         {
           background-color: rgb(176, 231, 238);
         }
@@ -15,7 +15,7 @@
         }
       </style>
     
-  </div>
+  
 
 <div class="container">
  <div class="col-sm-12">
@@ -33,7 +33,7 @@
             <tbody id="View Data">
                 <tr *ngFor="let a of varr">
                     <td>{{a.companyname}}</td>
-                    <td>{{a.registrationlink}}</td>
+                    <td><a routerLink="http://localhost:9000/project/downloadFile/{{a.registrationlink[0].name}}">{{a.registrationlink}}</a></td>
                     <td>{{a.duedate}}</td>
                 </tr>
             </tbody>

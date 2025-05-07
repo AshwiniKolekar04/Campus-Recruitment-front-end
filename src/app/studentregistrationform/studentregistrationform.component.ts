@@ -3,13 +3,12 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { Registration } from '../models/studentregistrationform';
 import { RegistrationService } from '../services/registration.service';
-import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-studentregistrationform',
   imports: [FormsModule,CommonModule],
   templateUrl: './studentregistrationform.component.html',
-  styleUrls: ['./studentregistrationform.component.css']
+  styleUrl: './studentregistrationform.component.css'
 })
 export class StudentregistrationformComponent {
   r:Registration=new Registration()

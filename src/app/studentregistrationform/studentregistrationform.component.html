@@ -79,7 +79,7 @@ input[type=submit]:hover {
         <input type="text" id="name" name="name" placeholder="Your name.." [(ngModel)]="r.name" required pattern="[a-zA-Z ]+" #nameRef="ngModel">
       </div>
     </div>
-    <div *ngIf="nameRef.invalid && nameRef.touched" class="error">
+    <div *ngIf="nameRef.invalid && nameRef.touched" class="error" >
       Name is required and must contain only letters and spaces.
     </div>
   
